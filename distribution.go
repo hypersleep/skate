@@ -46,7 +46,7 @@ func (distribution *Distribution) exceptFilter(repository string) bool {
 }
 
 func (distribution *Distribution) getRepositories() error {
-	resp, err := http.Get(distribution.url.String() + "/_catalog")
+	resp, err := http.Get(distribution.url.String() + "/_catalog?n=99999")
 	if err != nil {
 		return err
 	}
